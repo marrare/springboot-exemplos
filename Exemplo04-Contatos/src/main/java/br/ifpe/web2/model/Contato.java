@@ -3,18 +3,30 @@ package br.ifpe.web2.model;
 import java.util.Arrays;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
 public class Contato {
 
+	
 	private String nome;
 	private String telefone;
+	@Id
 	private String email;
 	private String[] apps;
-	private String grupo;
+	@ManyToOne
+	private Grupo grupo;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dataNascimento;
-	private String estado;
+	@Enumerated(EnumType.STRING)
+	private Estado estado;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -39,10 +51,10 @@ public class Contato {
 	public void setApps(String[] apps) {
 		this.apps = apps;
 	}
-	public String getGrupo() {
+	public Grupo getGrupo() {
 		return grupo;
 	}
-	public void setGrupo(String grupo) {
+	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
 	}
 	public Date getDataNascimento() {
@@ -51,10 +63,10 @@ public class Contato {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	public String getEstado() {
+	public Estado getEstado() {
 		return estado;
 	}
-	public void setEstado(String estado) {
+	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
 	@Override

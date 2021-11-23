@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Contatos :: Listar</title>
+<title>Grupos :: Listar</title>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -29,12 +29,12 @@
 				<th>Acões</th>
 			</tr>
 			<tr th:each="cont : ${lista}">
-				<td th:text="${cont.nome}"></td>
-				<td th:text="${cont.telefone}"></td>
-				<td th:text="${cont.email}">
-				<td><a th:href="@{/editarContato(email=${cont.email})}">Editar</a>&nbsp;&nbsp;
-					<a th:href="@{/removerContato(email=${cont.email})}">Remover</a></td>
-					<!-- http://localhost:8080/removerContato?email=gloria.maria@gmail.com -->
+				<td th:text="${cont.nomeGrupo}"></td>
+				<td th:text="${cont.visibilidade}"></td>
+				<td th:text="${cont.dataExpiracao}">
+				<td><a th:href="@{/editarGrupo(nome=${cont.nomeGrupo})}">Editar</a>&nbsp;&nbsp;
+					<a th:href="@{/removerGrupo(nome=${cont.nomeGrupo})}">Remover</a></td>
+					<!-- http://localhost:8080/removerGrupo?email=gloria.maria@gmail.com -->
 			</tr>
 		</table>
 		<hr />
