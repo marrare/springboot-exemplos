@@ -51,7 +51,7 @@
 			<div class="form-group form-check">
 				<label for="apps">Grupo</label><Br/>
 					<div th:each="grup : ${listaGrupo}" style="display: inline-block;">
-						<input type="radio" class="form-check-input" name="nomeGrupo" th:value="${grup.nomeGrupo}"/>
+						<input type="radio" class="form-check-input" name="nomeGrupo" th:value="${grup.nomeGrupo}" th:checked="${grup==contato.grupo}"/>
 						<label class="form-check-label" th:text="${grup.nomeGrupo}"></label>
 					</div >
 			</div>
