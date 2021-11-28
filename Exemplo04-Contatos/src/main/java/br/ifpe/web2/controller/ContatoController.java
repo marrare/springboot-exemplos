@@ -30,7 +30,7 @@ public class ContatoController {
 	
 	@PostMapping("/salvarContato")
 	public String salvarContato(Contato contato, Grupo grupo) {
-		Grupo grupo2 = this.grupoService.getGrupoNome(grupo.getNomeGrupo());
+		Grupo grupo2 = this.grupoService.getById(grupo.getId());
 		contato.setGrupo(grupo2);
 		this.contatoService.cadastrarContato(contato);
 		return "redirect:/listarContatos";

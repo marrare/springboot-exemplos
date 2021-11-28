@@ -20,7 +20,7 @@
 		    <li><a href="/listarGrupos">Listar Grupos</a></li>
 		</ul>
 	</nav>
-	<div class="contatiner col-sm-8 col-md-12 col-md-offset-2">
+	<div class="contatiner col-md-10 col-md-offset-1">
 		<table class="table table-dark">
 			<tr>
 				<th>Nome</th>
@@ -32,8 +32,8 @@
 				<td th:text="${cont.nomeGrupo}"></td>
 				<td th:text="${cont.visibilidade}"></td>
 				<td th:text="${cont.dataExpiracao}">
-				<td><a th:href="@{/editarGrupo(nome=${cont.nomeGrupo})}">Editar</a>&nbsp;&nbsp;
-					<a th:href="@{/removerGrupo(nome=${cont.nomeGrupo})}">Remover</a></td>
+				<td><a th:href="@{/editarGrupo(id=${cont.id})}">Editar</a>&nbsp;&nbsp;
+					<a th:href="@{/removerGrupo(id=${cont.id})}">Remover</a></td>
 					<!-- http://localhost:8080/removerGrupo?email=gloria.maria@gmail.com -->
 			</tr>
 		</table>

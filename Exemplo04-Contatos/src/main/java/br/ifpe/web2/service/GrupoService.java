@@ -30,13 +30,13 @@ public class GrupoService {
 		return listaGrupos;
 	}
 	
-	public Grupo getGrupoNome(String nomeGrupo) {
-		Grupo grupo = this.grupoDAO.findByNomeGrupo(nomeGrupo);
+	public Grupo getById(int id) {
+		Grupo grupo = this.grupoDAO.findById(id).orElse(null);
 		return grupo;
 	}
 	
-	public void deletarGrupo(String nomeGrupo) {
-		Grupo grupo = this.grupoDAO.findByNomeGrupo(nomeGrupo);
+	public void deletarGrupo(int id) {
+		Grupo grupo = this.grupoDAO.findById(id).orElse(null);
 		this.grupoDAO.delete(grupo);
 	}
 }

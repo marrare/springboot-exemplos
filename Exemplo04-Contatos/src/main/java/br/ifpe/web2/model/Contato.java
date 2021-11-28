@@ -3,11 +3,13 @@ package br.ifpe.web2.model;
 import java.util.Arrays;
 import java.util.Date;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderColumn;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -19,6 +21,8 @@ public class Contato {
 	private String telefone;
 	@Id
 	private String email;
+	@ElementCollection
+	@OrderColumn
 	private String[] apps;
 	@ManyToOne
 	private Grupo grupo;

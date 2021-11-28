@@ -36,14 +36,14 @@ public class GrupoController {
 	}
 	
 	@GetMapping("/removerGrupo")
-	public String removerGrupo(String nome) {
-		this.grupoService.deletarGrupo(nome);
+	public String removerGrupo(int id) {
+		this.grupoService.deletarGrupo(id);
 		return "redirect:/listarGrupos";
 	}
 	
 	@GetMapping("/editarGrupo")
-	public String editarGrupo(String nome, Model model) {
-		Grupo grupo = this.grupoService.getGrupoNome(nome);
+	public String editarGrupo(int id, Model model) {
+		Grupo grupo = this.grupoService.getById(id);
 		model.addAttribute("grupo", grupo);
 		return "grupos-form";
 	}

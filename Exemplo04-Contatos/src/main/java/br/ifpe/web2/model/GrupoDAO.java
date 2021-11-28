@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GrupoDAO extends JpaRepository<Grupo, Integer>{
-	public Grupo findByNomeGrupo(String nomeGrupo);
 	public List<Grupo> findByDataExpiracaoGreaterThanEqual(Date date);
 }
